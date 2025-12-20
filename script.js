@@ -4,11 +4,29 @@
  */
 
 // ================================================
+// Performance Utilities
+// ================================================
+const debounce = (fn, delay) => {
+    let timeoutId;
+    return (...args) => {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => fn(...args), delay);
+    };
+};
+
+const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+// ================================================
 // Cursor Glow Effect
 // ================================================
 class CursorGlow {
     constructor() {
+        // Skip on mobile/touch devices
+        if (isMobile || !window.matchMedia('(pointer: fine)').matches) return;
+        
         this.cursor = document.getElementById('cursorGlow');
+        if (!this.cursor) return;
+        
         this.position = { x: 0, y: 0 };
         this.targetPosition = { x: 0, y: 0 };
         this.init();
@@ -18,6 +36,7 @@ class CursorGlow {
         document.addEventListener('mousemove', (e) => {
             this.targetPosition.x = e.clientX;
             this.targetPosition.y = e.clientY;
+            this.cursor.style.opacity = '1';
         });
         this.animate();
     }
@@ -39,7 +58,12 @@ class CursorGlow {
 // ================================================
 class ParticleBackground {
     constructor() {
+        // Skip particles on mobile for performance
+        if (isMobile) return;
+        
         this.canvas = document.getElementById('particleCanvas');
+        if (!this.canvas) return;
+        
         this.ctx = this.canvas.getContext('2d');
         this.particles = [];
         this.mouse = { x: null, y: null, radius: 150 };
@@ -48,7 +72,8 @@ class ParticleBackground {
 
     init() {
         this.resize();
-        window.addEventListener('resize', () => this.resize());
+        // Debounce resize to prevent layout thrashing
+        window.addEventListener('resize', debounce(() => this.resize(), 250));
         
         document.addEventListener('mousemove', (e) => {
             this.mouse.x = e.x;
@@ -60,8 +85,11 @@ class ParticleBackground {
     }
 
     resize() {
-        this.canvas.width = window.innerWidth;
-        this.canvas.height = window.innerHeight;
+        // Cache dimensions to avoid multiple reflows
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        this.canvas.width = width;
+        this.canvas.height = height;
     }
 
     createParticles() {
@@ -202,7 +230,7 @@ class Navigation {
 }
 
 // ================================================
-// Scroll Animations (AOS-like) - Mobile Optimized
+// Scroll Animations (AOS-like) - Performance Optimized
 // ================================================
 class ScrollAnimations {
     constructor() {
@@ -212,11 +240,11 @@ class ScrollAnimations {
     }
 
     init() {
-        // Use IntersectionObserver for better mobile support
+        // Use IntersectionObserver - supported in all modern browsers
         if ('IntersectionObserver' in window) {
             const observerOptions = {
                 root: null,
-                rootMargin: '0px 0px -50px 0px',
+                rootMargin: '50px 0px',
                 threshold: 0.1
             };
 
@@ -236,36 +264,11 @@ class ScrollAnimations {
                 observer.observe(element);
             });
         } else {
-            // Fallback for older browsers - show all elements
+            // Fallback for very old browsers - show all elements immediately
             this.elements.forEach((element) => {
                 element.classList.add('aos-animate');
             });
         }
-
-        // Also check on load and touch events for mobile
-        this.checkElements();
-        
-        // Add touch and scroll listeners for mobile
-        ['scroll', 'touchmove', 'touchend'].forEach(event => {
-            window.addEventListener(event, () => this.checkElements(), { passive: true });
-        });
-    }
-
-    checkElements() {
-        this.elements.forEach((element) => {
-            if (this.observed.has(element)) return;
-            
-            const rect = element.getBoundingClientRect();
-            const offset = 50;
-            
-            if (rect.top < window.innerHeight - offset && rect.bottom > 0) {
-                this.observed.add(element);
-                const delay = element.dataset.aosDelay || 0;
-                setTimeout(() => {
-                    element.classList.add('aos-animate');
-                }, parseInt(delay));
-            }
-        });
     }
 }
 
@@ -919,7 +922,8 @@ class UltraGuruRunnerGame {
     
     init() {
         this.resize();
-        window.addEventListener('resize', () => this.resize());
+        // Debounce resize to prevent layout thrashing
+        window.addEventListener('resize', debounce(() => this.resize(), 250));
         
         // Character selection
         document.querySelectorAll('.character-option').forEach(option => {
