@@ -1961,6 +1961,23 @@ body:hover .cursor-glow {
     transform: translateX(0);
 }
 
+/* Mobile fallback - ensure content is visible even if JS animations fail */
+@media (max-width: 768px) {
+    [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+/* Reduced motion preference - show all content immediately */
+@media (prefers-reduced-motion: reduce) {
+    [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
 /* ================================================
    Urgency Banner
    ================================================ */

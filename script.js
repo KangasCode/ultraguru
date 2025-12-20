@@ -202,41 +202,68 @@ class Navigation {
 }
 
 // ================================================
-// Scroll Animations (AOS-like)
+// Scroll Animations (AOS-like) - Mobile Optimized
 // ================================================
 class ScrollAnimations {
     constructor() {
         this.elements = document.querySelectorAll('[data-aos]');
+        this.observed = new Set();
         this.init();
     }
 
     init() {
-        // Initial check
+        // Use IntersectionObserver for better mobile support
+        if ('IntersectionObserver' in window) {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -50px 0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting && !this.observed.has(entry.target)) {
+                        this.observed.add(entry.target);
+                        const delay = entry.target.dataset.aosDelay || 0;
+                        setTimeout(() => {
+                            entry.target.classList.add('aos-animate');
+                        }, parseInt(delay));
+                    }
+                });
+            }, observerOptions);
+
+            this.elements.forEach((element) => {
+                observer.observe(element);
+            });
+        } else {
+            // Fallback for older browsers - show all elements
+            this.elements.forEach((element) => {
+                element.classList.add('aos-animate');
+            });
+        }
+
+        // Also check on load and touch events for mobile
         this.checkElements();
         
-        // Add scroll listener with throttle
-        let ticking = false;
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                requestAnimationFrame(() => {
-                    this.checkElements();
-                    ticking = false;
-                });
-                ticking = true;
-            }
+        // Add touch and scroll listeners for mobile
+        ['scroll', 'touchmove', 'touchend'].forEach(event => {
+            window.addEventListener(event, () => this.checkElements(), { passive: true });
         });
     }
 
     checkElements() {
         this.elements.forEach((element) => {
-            const rect = element.getBoundingClientRect();
-            const offset = 100;
+            if (this.observed.has(element)) return;
             
-            if (rect.top < window.innerHeight - offset) {
+            const rect = element.getBoundingClientRect();
+            const offset = 50;
+            
+            if (rect.top < window.innerHeight - offset && rect.bottom > 0) {
+                this.observed.add(element);
                 const delay = element.dataset.aosDelay || 0;
                 setTimeout(() => {
                     element.classList.add('aos-animate');
-                }, delay);
+                }, parseInt(delay));
             }
         });
     }
