@@ -260,26 +260,11 @@ class ProductTilt {
     }
 
     handleMouseMove(e) {
-        const rect = this.showcase.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        
-        const rotateX = (y - centerY) / 20;
-        const rotateY = (centerX - x) / 20;
-        
-        this.container.style.transform = `
-            perspective(1000px)
-            rotateX(${rotateX}deg)
-            rotateY(${rotateY}deg)
-            scale3d(1.05, 1.05, 1.05)
-        `;
+        // 3D tilt effect disabled - only scale on hover via CSS
     }
 
     handleMouseLeave() {
-        this.container.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+        // 3D tilt effect disabled - only scale on hover via CSS
     }
 }
 
