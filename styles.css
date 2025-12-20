@@ -3383,24 +3383,53 @@ body:hover .cursor-glow {
     
     /* Navigation spacing for smaller banner */
     .nav {
-        top: 36px;
+        top: 32px;
+        padding: 12px 0;
+        background: rgba(10, 10, 10, 0.95);
+    }
+    
+    .nav.scrolled {
+        top: 0;
     }
     
     .hero {
-        padding-top: 90px;
+        padding-top: 120px;
+    }
+    
+    /* Hero image should not overlap with nav */
+    .product-showcase {
+        margin-top: 20px;
     }
     
     /* Social Proof Mobile */
     .social-proof-mini {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 12px;
     }
     
-    /* Trust Badges Mobile */
+    /* Trust Badges Mobile - Centered with space */
     .trust-badges-mini {
-        flex-direction: column;
-        gap: 12px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 32px;
+        margin-bottom: 40px;
+        padding: 0 20px;
+    }
+    
+    .trust-badge-mini {
+        font-size: 0.75rem;
+    }
+    
+    /* Hero content centered */
+    .hero-content {
+        text-align: center;
+    }
+    
+    .hero-cta-buttons {
+        justify-content: center;
     }
     
     /* Timeline Mobile */
@@ -3432,8 +3461,19 @@ body:hover .cursor-glow {
         order: -1;
     }
     
+    /* Purity features 2x2 grid on mobile */
     .purity-features {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .purity-feature {
+        font-size: 0.8rem;
+        gap: 8px;
+    }
+    
+    .purity-feature .feature-emoji {
+        font-size: 1.2rem;
     }
     
     /* Guarantee Mobile */
@@ -4309,35 +4349,37 @@ body:hover .cursor-glow {
 /* Game Responsive */
 @media (max-width: 768px) {
     .game-section {
-        padding: 60px 0;
+        padding: 40px 0;
     }
     
     .game-container {
-        margin: 0 10px;
-        border-radius: 16px;
+        margin: 0 5px;
+        border-radius: 12px;
+        min-height: 500px;
     }
     
     .game-character-select {
-        padding: 30px 20px;
+        padding: 25px 15px;
     }
     
     .game-character-select h3 {
-        font-size: 1.5rem;
-        margin-bottom: 20px;
+        font-size: 1.3rem;
+        margin-bottom: 15px;
     }
     
     .character-options {
-        gap: 15px;
-        flex-direction: column;
+        gap: 10px;
+        flex-direction: row;
+        justify-content: center;
     }
     
     .character-option {
-        padding: 15px 25px;
-        font-size: 1rem;
+        padding: 12px 20px;
+        font-size: 0.9rem;
     }
     
     .game-hud {
-        gap: 20px;
+        gap: 15px;
         padding: 12px;
         flex-wrap: wrap;
         justify-content: center;
@@ -4356,54 +4398,90 @@ body:hover .cursor-glow {
     }
     
     #gameCanvas {
-        height: 250px;
+        height: 280px;
     }
     
     .game-controls {
-        padding: 10px;
-        font-size: 0.7rem;
+        padding: 8px;
+        font-size: 0.65rem;
     }
     
     /* Game Over Mobile - Fixed */
     .game-over {
-        padding: 20px 15px;
+        padding: 15px 10px;
         overflow-y: auto;
     }
     
     .game-over h3 {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
+        font-size: 1.3rem;
+        margin-bottom: 10px;
     }
     
     .final-stats {
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
         width: 100%;
-        max-width: 280px;
     }
     
     .final-stat {
-        padding: 12px 20px;
-        width: 100%;
+        padding: 10px 15px;
+        min-width: 100px;
+        flex: 1;
+    }
+    
+    .final-stat .stat-label {
+        font-size: 0.65rem;
     }
     
     .final-stat .stat-value {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
     
     .game-over .btn {
         margin: 5px;
-        min-width: 150px;
-        padding: 12px 24px;
-        font-size: 0.9rem;
+        min-width: 130px;
+        padding: 10px 20px;
+        font-size: 0.85rem;
     }
     
-    .game-over .game-buttons {
+    .game-buttons {
         display: flex;
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
         width: 100%;
-        max-width: 200px;
+    }
+}
+
+/* FAQ Mobile fix */
+@media (max-width: 768px) {
+    .faq-icon {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+        min-height: 28px;
+        border-radius: 50%;
+        font-size: 1.2rem;
+        flex-shrink: 0;
+    }
+    
+    .faq-question {
+        padding: 18px 20px;
+        font-size: 0.95rem;
+        gap: 12px;
+    }
+    
+    /* Faster marquee on mobile */
+    .marquee-content {
+        animation-duration: 15s !important;
+    }
+    
+    /* Faster reviews scroll on mobile */
+    .reviews-track {
+        animation-duration: 20s !important;
     }
 }
 
