@@ -3134,6 +3134,196 @@ body:hover .cursor-glow {
 }
 
 /* ================================================
+   VIDEO STORY SECTIONS
+   ================================================ */
+
+.video-story-section {
+    padding: var(--section-padding) 0;
+    background: linear-gradient(180deg, var(--black) 0%, var(--dark) 50%, var(--black) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.video-story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.video-story-reverse .video-story-grid {
+    direction: rtl;
+}
+
+.video-story-reverse .video-story-grid > * {
+    direction: ltr;
+}
+
+.video-story-content {
+    max-width: 540px;
+}
+
+.video-story-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--gray-300);
+    margin-bottom: 24px;
+}
+
+.video-story-quote {
+    background: var(--dark-elevated);
+    border-left: 4px solid var(--cyan);
+    padding: 24px 32px;
+    margin: 32px 0;
+    border-radius: 0 16px 16px 0;
+    position: relative;
+}
+
+.video-story-quote .quote-icon {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-size: 4rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 0.5;
+    font-family: Georgia, serif;
+}
+
+.video-story-quote p {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--white);
+    margin: 0;
+}
+
+.video-story-stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid var(--gray-800);
+}
+
+.story-stat {
+    text-align: center;
+}
+
+.story-stat .stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.story-stat .stat-text {
+    font-size: 0.85rem;
+    color: var(--gray-500);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.video-story-visual {
+    position: relative;
+}
+
+.video-wrapper {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+}
+
+.story-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 24px;
+}
+
+.video-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(0, 245, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    animation: videoGlowPulse 4s ease-in-out infinite;
+}
+
+@keyframes videoGlowPulse {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+/* Video hover effect */
+.video-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid transparent;
+    border-radius: 24px;
+    background: linear-gradient(135deg, rgba(0, 245, 255, 0.3), rgba(191, 0, 255, 0.3)) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.video-wrapper:hover::before {
+    opacity: 1;
+}
+
+/* Responsive video sections */
+@media (max-width: 1024px) {
+    .video-story-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+    
+    .video-story-reverse .video-story-grid {
+        direction: ltr;
+    }
+    
+    .video-story-content {
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .video-story-quote {
+        border-left: none;
+        border-top: 4px solid var(--cyan);
+        border-radius: 0 0 16px 16px;
+    }
+    
+    .video-story-stats {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .video-story-stats {
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+    
+    .story-stat .stat-number {
+        font-size: 1.5rem;
+    }
+}
+
+/* ================================================
    ULTRA GURU RUNNER GAME STYLES
    ================================================ */
 
