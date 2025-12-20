@@ -4,10 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ultra Guru | Advanced Magnesium Complex</title>
-    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Critical inline styles for above-the-fold content -->
+    <style>
+        :root{--black:#0a0a0a;--white:#fff;--cyan:#00f5ff;--magenta:#bf00ff}
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{font-size:16px}
+        body{font-family:'Outfit',-apple-system,BlinkMacSystemFont,sans-serif;background:#0a0a0a;color:#fff;overflow-x:hidden}
+        .nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 0;background:rgba(10,10,10,0.8);backdrop-filter:blur(20px)}
+        .urgency-banner{position:fixed;top:0;left:0;right:0;z-index:1001;background:linear-gradient(90deg,#ff006e,#bf00ff,#ff006e);padding:12px 20px}
+        .hero{min-height:100vh;display:flex;align-items:center;padding-top:100px}
+    </style>
+    
+    <!-- Main CSS - loaded with preload for faster parsing -->
+    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
+    
+    <!-- Google Fonts - loaded asynchronously -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"></noscript>
 </head>
 <body>
     <!-- Cursor glow effect -->
@@ -1600,7 +1619,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
 
