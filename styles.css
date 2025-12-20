@@ -3114,15 +3114,43 @@ body:hover .cursor-glow {
         text-align: center;
     }
     
-    /* Urgency Banner Mobile */
+    /* Urgency Banner Mobile - Compact */
+    .urgency-banner {
+        padding: 8px 12px;
+    }
+    
     .urgency-content {
-        flex-wrap: wrap;
-        font-size: 0.8rem;
-        gap: 8px;
+        flex-wrap: nowrap;
+        font-size: 0.7rem;
+        gap: 6px;
+        white-space: nowrap;
     }
     
     .urgency-divider {
         display: none;
+    }
+    
+    .urgency-text {
+        font-size: 0.65rem;
+    }
+    
+    .countdown-timer {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+    }
+    
+    /* Scroll Indicator - Hide on mobile */
+    .scroll-indicator {
+        display: none;
+    }
+    
+    /* Navigation spacing for smaller banner */
+    .nav {
+        top: 36px;
+    }
+    
+    .hero {
+        padding-top: 90px;
     }
     
     /* Social Proof Mobile */
@@ -3182,6 +3210,28 @@ body:hover .cursor-glow {
     .guarantee-features {
         flex-wrap: wrap;
         justify-content: center;
+    }
+    
+    /* Mobile Performance Optimizations */
+    .cursor-glow {
+        display: none !important;
+    }
+    
+    #particleCanvas {
+        opacity: 0.3;
+    }
+    
+    .product-glow,
+    .btn::before,
+    .cta-glow {
+        animation: none;
+    }
+    
+    /* Reduce complex shadows on mobile */
+    .formula-card,
+    .trust-item,
+    .pricing-card {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     }
 }
 
@@ -4021,35 +4071,122 @@ body:hover .cursor-glow {
 
 /* Game Responsive */
 @media (max-width: 768px) {
+    .game-section {
+        padding: 60px 0;
+    }
+    
+    .game-container {
+        margin: 0 10px;
+        border-radius: 16px;
+    }
+    
+    .game-character-select {
+        padding: 30px 20px;
+    }
+    
+    .game-character-select h3 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+    
     .character-options {
-        gap: 20px;
+        gap: 15px;
+        flex-direction: column;
     }
     
     .character-option {
-        padding: 20px 30px;
+        padding: 15px 25px;
+        font-size: 1rem;
     }
     
     .game-hud {
-        gap: 30px;
-        padding: 15px;
+        gap: 20px;
+        padding: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hud-item {
+        min-width: auto;
     }
     
     .hud-value {
-        font-size: 1.2rem;
+        font-size: 1rem;
+    }
+    
+    .hud-label {
+        font-size: 0.6rem;
     }
     
     #gameCanvas {
-        height: 300px;
+        height: 250px;
     }
     
-    .final-stats {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
+    .game-controls {
+        padding: 10px;
+        font-size: 0.7rem;
+    }
+    
+    /* Game Over Mobile - Fixed */
+    .game-over {
+        padding: 20px 15px;
+        overflow-y: auto;
     }
     
     .game-over h3 {
-        font-size: 2rem;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .final-stats {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .final-stat {
+        padding: 12px 20px;
+        width: 100%;
+    }
+    
+    .final-stat .stat-value {
+        font-size: 1.5rem;
+    }
+    
+    .game-over .btn {
+        margin: 5px;
+        min-width: 150px;
+        padding: 12px 24px;
+        font-size: 0.9rem;
+    }
+    
+    .game-over .game-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 380px) {
+    .urgency-content {
+        font-size: 0.6rem;
+    }
+    
+    .countdown-timer {
+        font-size: 0.65rem;
+        padding: 3px 6px;
+    }
+    
+    .game-over h3 {
+        font-size: 1.3rem;
+    }
+    
+    .final-stat .stat-value {
+        font-size: 1.2rem;
     }
 }
 

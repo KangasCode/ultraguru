@@ -1380,9 +1380,51 @@ class UltraGuruRunnerGame {
 }
 
 // ================================================
+// Lazy Load Videos for Performance
+// ================================================
+class LazyVideos {
+    constructor() {
+        this.videos = document.querySelectorAll('video[data-src]');
+        this.init();
+    }
+
+    init() {
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        this.loadVideo(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { rootMargin: '100px' });
+
+            this.videos.forEach((video) => observer.observe(video));
+        } else {
+            // Fallback: load all videos immediately
+            this.videos.forEach((video) => this.loadVideo(video));
+        }
+    }
+
+    loadVideo(video) {
+        const src = video.dataset.src;
+        if (src) {
+            const source = video.querySelector('source');
+            if (source) {
+                source.src = src;
+                video.load();
+            }
+        }
+    }
+}
+
+// ================================================
 // Initialize Everything
 // ================================================
 document.addEventListener('DOMContentLoaded', () => {
+    // Performance: Lazy load videos
+    new LazyVideos();
+    
     // Core effects
     new CursorGlow();
     new ParticleBackground();
