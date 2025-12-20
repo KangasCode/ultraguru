@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultra Guru | Advanced Magnesium Complex</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Cursor glow effect -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+    
+    <!-- Particle background -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <svg class="logo-icon" viewBox="0 0 60 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 35V5L20 20V35H5Z" fill="url(#logoGrad1)" class="logo-path"/>
+                    <path d="M25 5H40V20L55 5V35L40 20V35H25V5Z" fill="url(#logoGrad2)" class="logo-path"/>
+                    <defs>
+                        <linearGradient id="logoGrad1" x1="5" y1="5" x2="20" y2="35">
+                            <stop offset="0%" stop-color="#00f5ff"/>
+                            <stop offset="100%" stop-color="#bf00ff"/>
+                        </linearGradient>
+                        <linearGradient id="logoGrad2" x1="25" y1="5" x2="55" y2="35">
+                            <stop offset="0%" stop-color="#00f5ff"/>
+                            <stop offset="100%" stop-color="#bf00ff"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span>ULTRA GURU</span>
+            </a>
+            <div class="nav-links">
+                <a href="#product" class="nav-link">Tuote</a>
+                <a href="#science" class="nav-link">Tiede</a>
+                <a href="#benefits" class="nav-link">Hyödyt</a>
+                <a href="#game" class="nav-link">Peli 🎮</a>
+            </div>
+            <a href="#order" class="nav-cta">
+                <span>Tilaa nyt</span>
+                <div class="cta-glow"></div>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Urgency Banner -->
+    <div class="urgency-banner">
+        <div class="urgency-content">
+            <span class="urgency-icon">🔥</span>
+            <span class="urgency-text"><strong>RAJOITETTU ERÄ:</strong> Vain <span id="stockCount">47</span> purkkia jäljellä tänään!</span>
+            <span class="urgency-divider">|</span>
+            <span class="urgency-timer">Tarjous päättyy: <span id="countdownTimer">23:59:59</span></span>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-elements">
+            <div class="hero-orb hero-orb-1"></div>
+            <div class="hero-orb hero-orb-2"></div>
+            <div class="hero-orb hero-orb-3"></div>
+            <div class="grid-lines"></div>
+        </div>
+        
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge" data-aos="fade-up">
+                    <span class="badge-dot"></span>
+                    <span>Lab Tested • Pharmaceutical Grade</span>
+                </div>
+                
+                <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+                    <span class="title-line">ULTRA</span>
+                    <span class="title-line gradient-text">DUST</span>
+                </h1>
+                
+                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+                    Advanced Magnesium Complex
+                </p>
+                
+                <p class="hero-tagline" data-aos="fade-up" data-aos-delay="250">
+                    Crafted for runners. Loved by lunatics.<br>
+                    <span class="tagline-highlight">Powered by trail hallucinations and purple dreams.</span>
+                </p>
+                
+                <p class="hero-description" data-aos="fade-up" data-aos-delay="300">
+                    💀 Kipu on väliaikaista. Magnesiuminpuute on ikuista.<br>
+                    Neljä magnesiummuotoa niille, jotka juoksevat kunnes alkavat hallusinoida.
+                </p>
+
+                <!-- Social Proof Mini -->
+                <div class="social-proof-mini" data-aos="fade-up" data-aos-delay="350">
+                    <div class="avatars-stack">
+                        <div class="avatar">JK</div>
+                        <div class="avatar">ML</div>
+                        <div class="avatar">AS</div>
+                        <div class="avatar">PT</div>
+                        <div class="avatar-more">+2.4k</div>
+                    </div>
+                    <div class="proof-text">
+                        <div class="proof-stars">★★★★★</div>
+                        <span>2,400+ tyytyväistä asiakasta</span>
+                    </div>
+                </div>
+                
+                <div class="hero-stats" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-item">
+                        <span class="stat-value">4</span>
+                        <span class="stat-label">Magnesium-<br>muotoa</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-value">99.9%</span>
+                        <span class="stat-label">Puhtaus-<br>aste</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-value">3rd</span>
+                        <span class="stat-label">Party<br>Testattu</span>
+                    </div>
+                </div>
+                
+                <div class="hero-actions" data-aos="fade-up" data-aos-delay="500">
+                    <a href="#order" class="btn btn-primary btn-pulse">
+                        <span>Tilaa Ultra Dust</span>
+                        <svg class="btn-arrow" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a href="#science" class="btn btn-secondary">
+                        <span>Tutustu tieteeseen</span>
+                    </a>
+                </div>
+
+                <!-- Trust Badges Mini -->
+                <div class="trust-badges-mini" data-aos="fade-up" data-aos-delay="550">
+                    <div class="trust-badge-item">
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2"/></svg>
+                        <span>100% Turvallinen</span>
+                    </div>
+                    <div class="trust-badge-item">
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M20 12V8H6a2 2 0 01-2-2c0-1.1.9-2 2-2h12v4" stroke="currentColor" stroke-width="2"/><path d="M4 6v12c0 1.1.9 2 2 2h14v-4" stroke="currentColor" stroke-width="2"/><path d="M18 12a2 2 0 100 4 2 2 0 000-4z" stroke="currentColor" stroke-width="2"/></svg>
+                        <span>Rahat takaisin 30pv</span>
+                    </div>
+                    <div class="trust-badge-item">
+                        <svg viewBox="0 0 24 24" fill="none"><rect x="1" y="3" width="15" height="13" rx="2" stroke="currentColor" stroke-width="2"/><path d="M16 8h4l3 3v5a2 2 0 01-2 2h-5" stroke="currentColor" stroke-width="2"/><circle cx="5.5" cy="18.5" r="2.5" stroke="currentColor" stroke-width="2"/><circle cx="18.5" cy="18.5" r="2.5" stroke="currentColor" stroke-width="2"/></svg>
+                        <span>Ilmainen toimitus</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-product" data-aos="fade-left" data-aos-delay="300">
+                <div class="product-showcase" id="productShowcase">
+                    <div class="product-glow"></div>
+                    <div class="product-ring product-ring-1"></div>
+                    <div class="product-ring product-ring-2"></div>
+                    <div class="product-ring product-ring-3"></div>
+                    <div class="product-container">
+                        <!-- Edge glow effects -->
+                        <div class="edge-glow-left"></div>
+                        <div class="edge-glow-right"></div>
+                        <div class="edge-glow-top"></div>
+                        
+                        <img src="images/ultra-dust-product.png" alt="Ultra Dust - Advanced Magnesium Complex" class="product-image" id="productImage" onerror="this.style.display='none'; document.getElementById('productFallback').style.display='flex';">
+                        
+                        <!-- Fallback when image doesn't load -->
+                        <div class="product-jar-visual" id="productFallback" style="display: none;">
+                            <div class="jar-3d">
+                                <div class="jar-lid-3d"></div>
+                                <div class="jar-body-3d">
+                                    <div class="jar-reflection-3d"></div>
+                                    <div class="jar-label-3d">
+                                        <svg class="jar-logo-3d" viewBox="0 0 60 40" fill="none">
+                                            <path d="M5 35V5L20 20V35H5Z" fill="url(#fallbackGrad1)"/>
+                                            <path d="M25 5H40V20L55 5V35L40 20V35H25V5Z" fill="url(#fallbackGrad2)"/>
+                                            <defs>
+                                                <linearGradient id="fallbackGrad1" x1="5" y1="5" x2="20" y2="35">
+                                                    <stop offset="0%" stop-color="#00f5ff"/>
+                                                    <stop offset="100%" stop-color="#bf00ff"/>
+                                                </linearGradient>
+                                                <linearGradient id="fallbackGrad2" x1="25" y1="5" x2="55" y2="35">
+                                                    <stop offset="0%" stop-color="#00f5ff"/>
+                                                    <stop offset="100%" stop-color="#bf00ff"/>
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                        <div class="jar-name-3d">ULTRA<br>DUST</div>
+                                        <div class="jar-sub-3d">ADVANCED MAGNESIUM COMPLEX</div>
+                                        <div class="jar-tested-3d">LAB TESTED</div>
+                                    </div>
+                                    <div class="jar-benefits-3d">
+                                        <span>SLEEP LIKE A GURU</span>
+                                        <span>CRUSH CRAMPS</span>
+                                        <span>TURBO RECOVERY</span>
+                                        <span>BRAIN POWER MODE</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="floating-elements">
+                        <div class="float-element float-mg">Mg²⁺</div>
+                        <div class="float-element float-formula">C₄H₆MgO₄</div>
+                        <div class="float-element float-pure">99.9%</div>
+                    </div>
+                </div>
+                
+                <!-- Product Badges -->
+                <div class="product-badges">
+                    <div class="product-badge badge-bestseller">
+                        <span>🏆 #1 Myydyin</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator" id="scrollIndicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Vieritä alas</span>
+        </div>
+    </section>
+
+    <!-- Benefits Marquee -->
+    <section class="marquee-section">
+        <div class="marquee">
+            <div class="marquee-content">
+                <span class="marquee-item">SLEEP LIKE A GURU</span>
+                <span class="marquee-divider">◆</span>
+                <span class="marquee-item">CRUSH CRAMPS</span>
+                <span class="marquee-divider">◆</span>
+                <span class="marquee-item">TURBO RECOVERY</span>
+                <span class="marquee-divider">◆</span>
+                <span class="marquee-item">BRAIN POWER MODE</span>
+                <span class="marquee-divider">◆</span>
+                <span class="marquee-item">SLEEP LIKE A GURU</span>
+                <span class="marquee-divider">◆</span>
+                <span class="marquee-item">CRUSH CRAMPS</span>
+                <span class="marquee-divider">◆</span>
+                <span class="marquee-item">TURBO RECOVERY</span>
+                <span class="marquee-divider">◆</span>
+                <span class="marquee-item">BRAIN POWER MODE</span>
+                <span class="marquee-divider">◆</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Science Section -->
+    <section class="science-section" id="science">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">#MagnesiumMadness</span>
+                <h2 class="section-title">
+                    Developed by scientists.<br>
+                    <span class="gradient-text">Approved by trail goblins.</span>
+                </h2>
+                <p class="section-description">
+                    🧪 Tehty ultramatkoille. Ja ultrahulluille. Neljä magnesiummuotoa, 
+                    koska tavallinen magnesium on aloittelijoille.
+                </p>
+            </div>
+            
+            <div class="formula-grid">
+                <div class="formula-card" data-tilt>
+                    <div class="formula-icon">
+                        <div class="molecule-animation molecule-glycinate">
+                            <div class="molecule-core"></div>
+                            <div class="molecule-electron"></div>
+                            <div class="molecule-electron"></div>
+                            <div class="molecule-ring"></div>
+                        </div>
+                    </div>
+                    <h3 class="formula-name">Magnesium Glycinaatti</h3>
+                    <p class="formula-desc">Kelatoidtu aminohappoon parempaa imeytymistä varten. Tukee unta ja rentouttaa lihaksia.</p>
+                    <div class="formula-stats">
+                        <div class="formula-stat">
+                            <span class="formula-stat-value">90%</span>
+                            <span class="formula-stat-label">Imeytyminen</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="formula-card" data-tilt>
+                    <div class="formula-icon">
+                        <div class="molecule-animation molecule-threonate">
+                            <div class="molecule-core brain-core"></div>
+                            <div class="neuron-pulse"></div>
+                            <div class="neuron-pulse delay-1"></div>
+                            <div class="neuron-pulse delay-2"></div>
+                            <div class="synapse"></div>
+                            <div class="synapse s2"></div>
+                            <div class="synapse s3"></div>
+                        </div>
+                    </div>
+                    <h3 class="formula-name">Magnesium L-Threonaatti</h3>
+                    <p class="formula-desc">Ainoa muoto joka läpäisee veri-aivoesteen. Tukee kognitiota ja muistia.</p>
+                    <div class="formula-stats">
+                        <div class="formula-stat">
+                            <span class="formula-stat-value">BBB+</span>
+                            <span class="formula-stat-label">Aivoihin</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="formula-card" data-tilt>
+                    <div class="formula-icon">
+                        <div class="molecule-animation molecule-malate">
+                            <div class="molecule-core energy-core"></div>
+                            <div class="energy-bolt"></div>
+                            <div class="energy-bolt b2"></div>
+                            <div class="energy-bolt b3"></div>
+                            <div class="energy-ring"></div>
+                        </div>
+                    </div>
+                    <h3 class="formula-name">Magnesium Malate</h3>
+                    <p class="formula-desc">Yhdistetty omenahappoon. Tukee energiantuotantoa ja lihasten palautumista.</p>
+                    <div class="formula-stats">
+                        <div class="formula-stat">
+                            <span class="formula-stat-value">ATP+</span>
+                            <span class="formula-stat-label">Energia</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="formula-card" data-tilt>
+                    <div class="formula-icon">
+                        <div class="molecule-animation molecule-taurate">
+                            <div class="molecule-core heart-core"></div>
+                            <div class="heartbeat-ring"></div>
+                            <div class="heartbeat-ring delay-1"></div>
+                            <div class="heart-pulse"></div>
+                        </div>
+                    </div>
+                    <h3 class="formula-name">Magnesium Tauraatti</h3>
+                    <p class="formula-desc">Kelatoitu tauriiniin. Tukee sydänterveyttä ja verenpaineen säätelyä.</p>
+                    <div class="formula-stats">
+                        <div class="formula-stat">
+                            <span class="formula-stat-value">❤️</span>
+                            <span class="formula-stat-label">Sydän</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section" id="benefits">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">#StayZenRunFar</span>
+                <h2 class="section-title">
+                    It's not about the speed.<br>
+                    <span class="gradient-text">It's about the magnesium.</span>
+                </h2>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card benefit-card-large" data-magnetic>
+                    <div class="benefit-visual">
+                        <div class="benefit-icon-wrap">
+                            <svg class="benefit-icon" viewBox="0 0 64 64" fill="none">
+                                <circle cx="32" cy="32" r="28" stroke="url(#benefitGrad1)" stroke-width="2"/>
+                                <path d="M32 16C32 16 20 24 20 36C20 42.627 25.373 48 32 48C38.627 48 44 42.627 44 36C44 24 32 16 32 16Z" fill="url(#benefitGrad1)"/>
+                                <path d="M28 28L32 24L36 28" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="28" cy="36" r="2" fill="#0a0a0a"/>
+                                <circle cx="36" cy="36" r="2" fill="#0a0a0a"/>
+                                <path d="M29 42C29 42 32 44 35 42" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round"/>
+                                <defs>
+                                    <linearGradient id="benefitGrad1" x1="0" y1="0" x2="64" y2="64">
+                                        <stop offset="0%" stop-color="#00f5ff"/>
+                                        <stop offset="100%" stop-color="#bf00ff"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="benefit-content">
+                        <h3 class="benefit-title">Sleep Like a Monk</h3>
+                        <p class="benefit-desc">🧘‍♂️ Lepoa varten, ei yliajatusteluun. Glysinaatti rauhoittaa hermostosi niin että voit oikeasti nukkua sen sijaan että kelaat sitä kiusallista keskustelua vuodelta 2014.</p>
+                    </div>
+                    <div class="benefit-glow"></div>
+                </div>
+                
+                <div class="benefit-card" data-magnetic>
+                    <div class="benefit-visual">
+                        <div class="benefit-icon-wrap">
+                            <svg class="benefit-icon" viewBox="0 0 64 64" fill="none">
+                                <path d="M16 32C16 32 24 20 32 20C40 20 48 32 48 32C48 32 40 44 32 44C24 44 16 32 16 32Z" stroke="url(#benefitGrad2)" stroke-width="2"/>
+                                <path d="M20 24L44 40M44 24L20 40" stroke="url(#benefitGrad2)" stroke-width="2" stroke-linecap="round"/>
+                                <defs>
+                                    <linearGradient id="benefitGrad2" x1="16" y1="20" x2="48" y2="44">
+                                        <stop offset="0%" stop-color="#ff006e"/>
+                                        <stop offset="100%" stop-color="#ffbe0b"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="benefit-content">
+                        <h3 class="benefit-title">Crush Cramps</h3>
+                        <p class="benefit-desc">⚡ Zen kunnes pohkeet kramppaa. Sitten ei enää kramppaa. Jalkasi kiittävät kilometrillä 80.</p>
+                    </div>
+                    <div class="benefit-glow"></div>
+                </div>
+                
+                <div class="benefit-card" data-magnetic>
+                    <div class="benefit-visual">
+                        <div class="benefit-icon-wrap">
+                            <svg class="benefit-icon" viewBox="0 0 64 64" fill="none">
+                                <path d="M32 8L36 24L52 20L40 32L52 44L36 40L32 56L28 40L12 44L24 32L12 20L28 24L32 8Z" stroke="url(#benefitGrad3)" stroke-width="2" fill="url(#benefitGrad3)" fill-opacity="0.2"/>
+                                <defs>
+                                    <linearGradient id="benefitGrad3" x1="12" y1="8" x2="52" y2="56">
+                                        <stop offset="0%" stop-color="#00ff88"/>
+                                        <stop offset="100%" stop-color="#00f5ff"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="benefit-content">
+                        <h3 class="benefit-title">Turbo Recovery</h3>
+                        <p class="benefit-desc">🏃‍♂️ Yksi kapseli päivässä pitää DNF:n loitolla. Malaatti tehostaa ATP-tuotantoa, jotta voit kärsiä taas huomenna.</p>
+                    </div>
+                    <div class="benefit-glow"></div>
+                </div>
+                
+                <div class="benefit-card" data-magnetic>
+                    <div class="benefit-visual">
+                        <div class="benefit-icon-wrap">
+                            <svg class="benefit-icon" viewBox="0 0 64 64" fill="none">
+                                <circle cx="32" cy="32" r="20" stroke="url(#benefitGrad4)" stroke-width="2"/>
+                                <circle cx="32" cy="32" r="12" stroke="url(#benefitGrad4)" stroke-width="2"/>
+                                <circle cx="32" cy="32" r="4" fill="url(#benefitGrad4)"/>
+                                <path d="M32 8V16M32 48V56M8 32H16M48 32H56" stroke="url(#benefitGrad4)" stroke-width="2" stroke-linecap="round"/>
+                                <defs>
+                                    <linearGradient id="benefitGrad4" x1="8" y1="8" x2="56" y2="56">
+                                        <stop offset="0%" stop-color="#bf00ff"/>
+                                        <stop offset="100%" stop-color="#ff006e"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="benefit-content">
+                        <h3 class="benefit-title">Brain Power Mode</h3>
+                        <p class="benefit-desc">🧙‍♂️ Sisältää enemmän viisautta kuin eksäsi. L-Threonaatti läpäisee veri-aivoesteen niitä ultraharhoija varten.</p>
+                    </div>
+                    <div class="benefit-glow"></div>
+                </div>
+                
+                <div class="benefit-card" data-magnetic>
+                    <div class="benefit-visual">
+                        <div class="benefit-icon-wrap">
+                            <svg class="benefit-icon" viewBox="0 0 64 64" fill="none">
+                                <path d="M32 12C32 12 18 20 18 32C18 40 24 48 32 52C40 48 46 40 46 32C46 20 32 12 32 12Z" stroke="url(#benefitGrad5)" stroke-width="2" fill="url(#benefitGrad5)" fill-opacity="0.2"/>
+                                <path d="M26 32L30 36L38 28" stroke="url(#benefitGrad5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="32" cy="32" r="24" stroke="url(#benefitGrad5)" stroke-width="2" stroke-dasharray="4 4"/>
+                                <defs>
+                                    <linearGradient id="benefitGrad5" x1="8" y1="8" x2="56" y2="56">
+                                        <stop offset="0%" stop-color="#ff006e"/>
+                                        <stop offset="100%" stop-color="#ffbe0b"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="benefit-content">
+                        <h3 class="benefit-title">Heart of a Guru</h3>
+                        <p class="benefit-desc">❤️ Kun keho sanoo ei, mutta ego sanoo mene! Tauraatti pitää sydämesi tyytyväisenä läpi kaikkien pystykilometrien.</p>
+                    </div>
+                    <div class="benefit-glow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust-section" id="trust">
+        <div class="section-container">
+            <div class="trust-grid">
+                <div class="trust-item" data-count="99.9" data-suffix="%">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <path d="M24 4L6 12V22C6 33.1 13.8 43.3 24 46C34.2 43.3 42 33.1 42 22V12L24 4Z" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M16 24L22 30L34 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <span class="trust-value">0</span>
+                    <span class="trust-label">Puhtausaste</span>
+                </div>
+                
+                <div class="trust-item" data-count="50000" data-suffix="+">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="16" r="8" stroke="currentColor" stroke-width="2"/>
+                            <path d="M8 42C8 33.163 15.163 26 24 26C32.837 26 40 33.163 40 42" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <span class="trust-value">0</span>
+                    <span class="trust-label">Tyytyväistä asiakasta</span>
+                </div>
+                
+                <div class="trust-item" data-count="147" data-suffix="">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <rect x="6" y="10" width="36" height="28" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <path d="M6 18H42" stroke="currentColor" stroke-width="2"/>
+                            <path d="M18 26H30M18 32H26" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <span class="trust-value">0</span>
+                    <span class="trust-label">Tutkimusta taustalla</span>
+                </div>
+                
+                <div class="trust-item" data-count="4.9" data-suffix="/5">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <path d="M24 4L29.5 17H44L32.5 26L37 40L24 30L11 40L15.5 26L4 17H18.5L24 4Z" stroke="currentColor" stroke-width="2" fill="currentColor" fill-opacity="0.2"/>
+                        </svg>
+                    </div>
+                    <span class="trust-value">0</span>
+                    <span class="trust-label">Asiakasarvio</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lab Tested Section -->
+    <section class="lab-section">
+        <div class="section-container">
+            <div class="lab-content">
+                <div class="lab-visual">
+                    <div class="lab-badge-container">
+                        <div class="lab-badge">
+                            <div class="lab-badge-inner">
+                                <svg class="lab-icon" viewBox="0 0 80 80" fill="none">
+                                    <circle cx="40" cy="40" r="36" stroke="url(#labGrad)" stroke-width="2"/>
+                                    <path d="M30 20V35L20 55C18.5 58 20.5 62 24 62H56C59.5 62 61.5 58 60 55L50 35V20" stroke="url(#labGrad)" stroke-width="2"/>
+                                    <path d="M28 20H52" stroke="url(#labGrad)" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M35 42L45 42M35 50L40 50" stroke="url(#labGrad)" stroke-width="2" stroke-linecap="round"/>
+                                    <circle cx="42" cy="46" r="3" fill="url(#labGrad)"/>
+                                    <defs>
+                                        <linearGradient id="labGrad" x1="0" y1="0" x2="80" y2="80">
+                                            <stop offset="0%" stop-color="#00f5ff"/>
+                                            <stop offset="50%" stop-color="#bf00ff"/>
+                                            <stop offset="100%" stop-color="#ff006e"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                                <span class="lab-badge-text">LAB<br>TESTED</span>
+                            </div>
+                            <div class="lab-badge-glow"></div>
+                        </div>
+                        <div class="lab-particles">
+                            <span></span><span></span><span></span>
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lab-info">
+                    <span class="section-tag">Trust the Process</span>
+                    <h2 class="section-title">
+                        Lab tested.<br>
+                        <span class="gradient-text">Trail approved.</span>
+                    </h2>
+                    <p class="lab-description">
+                        🔬 Jokainen erä testattu tieteilijöiden toimesta, jotka eivät ole koskaan juosseet ultraa. 
+                        Mutta he tuntevat magnesiumin. Saat tarkalleen sen mitä etiketissä lukee. 
+                        Ei mysteerijauheita. Ei polkupeikkojen ainesosia.
+                    </p>
+                    
+                    <ul class="lab-features">
+                        <li class="lab-feature">
+                            <span class="feature-check">✓</span>
+                            <span>Raskasmetallitestattu</span>
+                        </li>
+                        <li class="lab-feature">
+                            <span class="feature-check">✓</span>
+                            <span>Mikrobivapaa</span>
+                        </li>
+                        <li class="lab-feature">
+                            <span class="feature-check">✓</span>
+                            <span>Allergeenivapaa</span>
+                        </li>
+                        <li class="lab-feature">
+                            <span class="feature-check">✓</span>
+                            <span>GMP-sertifioitu tuotanto</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="#" class="btn btn-secondary">
+                        <span>Näytä laboratoriotulokset</span>
+                        <svg class="btn-arrow" viewBox="0 0 24 24" fill="none">
+                            <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section" id="reviews">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">#ShutUpLegsNamaste</span>
+                <h2 class="section-title">
+                    Trail tested.<br>
+                    <span class="gradient-text">Lunatic approved.</span>
+                </h2>
+            </div>
+            
+            <div class="reviews-slider">
+                <div class="reviews-track" id="reviewsTrack">
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"En ole koskaan nukkunut näin hyvin. Ultra Dust on muuttanut elämäni täysin. Krampit loppuivat ja palautuminen on huippuluokkaa."</p>
+                        <div class="review-author">
+                            <div class="author-avatar">MK</div>
+                            <div class="author-info">
+                                <span class="author-name">Mikko K.</span>
+                                <span class="author-title">Verified Buyer</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Crossfit-harjoittelu on vaatinut paljon keholta. Ultra Dustin jälkeen palautuminen nopeutui huomattavasti. Suosittelen!"</p>
+                        <div class="review-author">
+                            <div class="author-avatar">SL</div>
+                            <div class="author-info">
+                                <span class="author-name">Sanna L.</span>
+                                <span class="author-title">Verified Buyer</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Aiemmat magnesiumlisät aiheuttivat vatsavaivoja. Ultra Dustilla ei mitään ongelmia ja teho on parempi kuin koskaan."</p>
+                        <div class="review-author">
+                            <div class="author-avatar">JH</div>
+                            <div class="author-info">
+                                <span class="author-name">Jari H.</span>
+                                <span class="author-title">Verified Buyer</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="review-text">"Fokus ja keskittyminen paranivat merkittävästi. L-Threonaatti tekee selvästi tehtävänsä. Premium-laatua!"</p>
+                        <div class="review-author">
+                            <div class="author-avatar">AP</div>
+                            <div class="author-info">
+                                <span class="author-name">Anna P.</span>
+                                <span class="author-title">Verified Buyer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Timeline Section -->
+    <section class="timeline-section" id="results">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">#PoweredByPainkillersAndGuru</span>
+                <h2 class="section-title">
+                    Your journey to<br>
+                    <span class="gradient-text">enlightenment.</span>
+                </h2>
+                <p class="section-description">
+                    🧘‍♂️ Krampaavasta aloittelijasta zen-ultrasotilaaksi. Tässä mitä odottaa.
+                </p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-marker">
+                        <span>1</span>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-period">Viikko 1-2</span>
+                        <h3 class="timeline-title">Ensimmäiset vaikutukset</h3>
+                        <p class="timeline-desc">Unen laatu paranee, nukahtaminen helpottuu. Lihaskrampit alkavat vähentyä.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="timeline-marker">
+                        <span>2</span>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-period">Viikko 2-4</span>
+                        <h3 class="timeline-title">Selkeä parannus</h3>
+                        <p class="timeline-desc">Palautuminen nopeutuu huomattavasti. Energia ja fokus paranevat päivällä.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-marker">
+                        <span>3</span>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-period">Viikko 4-8</span>
+                        <h3 class="timeline-title">Täydet hyödyt</h3>
+                        <p class="timeline-desc">Kehon magnesiumvarastot täynnä. Optimaalinen suorituskyky kaikilla osa-alueilla.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="timeline-marker">
+                        <span>∞</span>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-period">Jatkuva käyttö</span>
+                        <h3 class="timeline-title">Pysyvät tulokset</h3>
+                        <p class="timeline-desc">Ylläpidä optimaalisia tasoja ja nauti jatkuvasta hyvästä olosta ja suorituskyvystä.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison-section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Vertailu</span>
+                <h2 class="section-title">
+                    Miksi Ultra Dust<br>
+                    <span class="gradient-text">voittaa muut?</span>
+                </h2>
+            </div>
+            
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Ominaisuus</th>
+                            <th class="highlight-col">
+                                <div class="brand-header">
+                                    <svg class="brand-logo-small" viewBox="0 0 60 40" fill="none">
+                                        <path d="M5 35V5L20 20V35H5Z" fill="url(#compLogoGrad1)"/>
+                                        <path d="M25 5H40V20L55 5V35L40 20V35H25V5Z" fill="url(#compLogoGrad2)"/>
+                                        <defs>
+                                            <linearGradient id="compLogoGrad1" x1="5" y1="5" x2="20" y2="35">
+                                                <stop offset="0%" stop-color="#00f5ff"/>
+                                                <stop offset="100%" stop-color="#bf00ff"/>
+                                            </linearGradient>
+                                            <linearGradient id="compLogoGrad2" x1="25" y1="5" x2="55" y2="35">
+                                                <stop offset="0%" stop-color="#00f5ff"/>
+                                                <stop offset="100%" stop-color="#bf00ff"/>
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                    Ultra Dust
+                                </div>
+                            </th>
+                            <th>Perus Magnesium</th>
+                            <th>Muut Premium</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Magnesiummuotoja</td>
+                            <td class="highlight-col"><span class="check-yes">4 muotoa ✓</span></td>
+                            <td><span class="check-no">1 muoto</span></td>
+                            <td><span class="check-partial">2 muotoa</span></td>
+                        </tr>
+                        <tr>
+                            <td>Veri-aivoeste (BBB)</td>
+                            <td class="highlight-col"><span class="check-yes">Läpäisee ✓</span></td>
+                            <td><span class="check-no">Ei ✗</span></td>
+                            <td><span class="check-no">Ei ✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>Imeytymisaste</td>
+                            <td class="highlight-col"><span class="check-yes">90%+ ✓</span></td>
+                            <td><span class="check-no">~20%</span></td>
+                            <td><span class="check-partial">~50%</span></td>
+                        </tr>
+                        <tr>
+                            <td>Vatsaystävällinen</td>
+                            <td class="highlight-col"><span class="check-yes">Kyllä ✓</span></td>
+                            <td><span class="check-no">Ei ✗</span></td>
+                            <td><span class="check-partial">Osittain</span></td>
+                        </tr>
+                        <tr>
+                            <td>3. osapuolen testattu</td>
+                            <td class="highlight-col"><span class="check-yes">Kyllä ✓</span></td>
+                            <td><span class="check-no">Ei ✗</span></td>
+                            <td><span class="check-partial">Vaihtelee</span></td>
+                        </tr>
+                        <tr>
+                            <td>Täyteaineet</td>
+                            <td class="highlight-col"><span class="check-yes">0% ✓</span></td>
+                            <td><span class="check-no">Usein ✗</span></td>
+                            <td><span class="check-partial">Vähän</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ingredients Transparency Section -->
+    <section class="ingredients-section">
+        <div class="section-container">
+            <div class="ingredients-grid">
+                <div class="ingredients-info">
+                    <span class="section-tag">Läpinäkyvyys</span>
+                    <h2 class="section-title">
+                        Tiedät tarkalleen<br>
+                        <span class="gradient-text">mitä saat</span>
+                    </h2>
+                    <p class="ingredients-desc">
+                        Ei piiloainesosia, ei "oma sekoitus" -salaisuuksia. 
+                        Jokainen ainesosa ja määrä on listattu selkeästi.
+                    </p>
+                    
+                    <div class="ingredient-list">
+                        <div class="ingredient-item">
+                            <div class="ingredient-header">
+                                <span class="ingredient-name">Magnesium Glycinate</span>
+                                <span class="ingredient-amount">200mg</span>
+                            </div>
+                            <div class="ingredient-bar">
+                                <div class="ingredient-fill" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="ingredient-item">
+                            <div class="ingredient-header">
+                                <span class="ingredient-name">Magnesium L-Threonate</span>
+                                <span class="ingredient-amount">144mg</span>
+                            </div>
+                            <div class="ingredient-bar">
+                                <div class="ingredient-fill" style="width: 72%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="ingredient-item">
+                            <div class="ingredient-header">
+                                <span class="ingredient-name">Magnesium Malate</span>
+                                <span class="ingredient-amount">150mg</span>
+                            </div>
+                            <div class="ingredient-bar">
+                                <div class="ingredient-fill" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="ingredient-item">
+                            <div class="ingredient-header">
+                                <span class="ingredient-name">Magnesium Taurate</span>
+                                <span class="ingredient-amount">100mg</span>
+                            </div>
+                            <div class="ingredient-bar">
+                                <div class="ingredient-fill" style="width: 50%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="total-magnesium">
+                        <span class="total-label">Elementaalinen Magnesium yhteensä:</span>
+                        <span class="total-value">594mg / annos</span>
+                    </div>
+                </div>
+                
+                <div class="ingredients-visual">
+                    <div class="purity-badge">
+                        <div class="purity-ring">
+                            <svg viewBox="0 0 200 200">
+                                <circle cx="100" cy="100" r="90" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="8"/>
+                                <circle cx="100" cy="100" r="90" fill="none" stroke="url(#purityGrad)" stroke-width="8" stroke-dasharray="565" stroke-dashoffset="6" stroke-linecap="round" transform="rotate(-90 100 100)"/>
+                                <defs>
+                                    <linearGradient id="purityGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#00f5ff"/>
+                                        <stop offset="100%" stop-color="#bf00ff"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <div class="purity-content">
+                                <span class="purity-value">99.9%</span>
+                                <span class="purity-label">Puhtaus</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="purity-features">
+                        <div class="purity-feature">
+                            <span class="feature-icon">🚫</span>
+                            <span>Ei täyteaineita</span>
+                        </div>
+                        <div class="purity-feature">
+                            <span class="feature-icon">🌿</span>
+                            <span>Vegaaninen</span>
+                        </div>
+                        <div class="purity-feature">
+                            <span class="feature-icon">🔬</span>
+                            <span>Laboratoriopuhdas</span>
+                        </div>
+                        <div class="purity-feature">
+                            <span class="feature-icon">🏭</span>
+                            <span>GMP-sertifioitu</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">UKK</span>
+                <h2 class="section-title">
+                    Usein kysytyt<br>
+                    <span class="gradient-text">kysymykset</span>
+                </h2>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item" data-faq>
+                    <div class="faq-question">
+                        <span>Milloin minun tulisi ottaa Ultra Dust?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Suosittelemme ottamaan Ultra Dustin 30-60 minuuttia ennen nukkumaanmenoa. Tämä ajoitus maksimoi magnesiumglysinaatin rauhoittavat vaikutukset ja tukee syvää unta. Voit myös jakaa annoksen ottamalla puolet aamulla ja puolet illalla.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-faq>
+                    <div class="faq-question">
+                        <span>Onko Ultra Dust turvallinen käyttää päivittäin?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Kyllä! Ultra Dust on suunniteltu päivittäiseen käyttöön. Kaikki neljä magnesiummuotoa ovat hyvin siedettyjä ja turvallisia pitkäaikaisessa käytössä. Tuote on 3. osapuolen testaama ja GMP-sertifioitu.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-faq>
+                    <div class="faq-question">
+                        <span>Miksi neljä eri magnesiummuotoa?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Jokaisella magnesiummuodolla on omat vahvuutensa: Glycinate rentouttaa ja tukee unta, L-Threonate läpäisee veri-aivoesteen ja tukee kognitiota, Malate energisoi ja tukee palautumista, Taurate tukee sydänterveyttä. Yhdessä ne kattavat kaikki kehon tarpeet.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-faq>
+                    <div class="faq-question">
+                        <span>Entä jos tuote ei sovi minulle?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Tarjoamme 30 päivän 100% rahat takaisin -takuun. Jos et ole täysin tyytyväinen Ultra Dustiin, ota yhteyttä asiakaspalveluumme ja palautamme rahat - kysymättä mitään.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-faq>
+                    <div class="faq-question">
+                        <span>Kuinka nopeasti näen tuloksia?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Monet käyttäjät huomaavat parannusta unenlaatuun jo ensimmäisen viikon aikana. Täydet hyödyt, kuten parempi palautuminen ja kognitiivinen suorituskyky, tulevat tyypillisesti 4-8 viikon säännöllisen käytön jälkeen.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item" data-faq>
+                    <div class="faq-question">
+                        <span>Sopiiko Ultra Dust urheilijoille?</span>
+                        <div class="faq-icon">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ehdottomasti! Ultra Dust on erityisen suosittu urheilijoiden keskuudessa. Se tukee lihasten palautumista, ehkäisee kramppeja ja parantaa unen laatua - kaikki kriittisiä tekijöitä urheilusuorituksessa. Tuote on myös dopingtestattu ja turvallinen kilpaurheilijoille.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Runner Game Section -->
+    <section class="game-section" id="game">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">#StayZenRunFar</span>
+                <h2 class="section-title">
+                    Ultra Guru<br>
+                    <span class="gradient-text">Runner Challenge</span>
+                </h2>
+                <p class="section-description">
+                    🏃 Kerää Ultra Guru -purkkeja ja juokse nopeammin! Väistä esteet ja katso kuinka pitkälle pääset.
+                </p>
+            </div>
+            
+            <div class="game-container state-select">
+                <!-- Character Selection -->
+                <div class="game-character-select" id="characterSelect">
+                    <h3>Valitse hahmosi</h3>
+                    <div class="character-options">
+                        <button type="button" class="character-option" data-character="male" aria-label="Valitse Trail Goblin">
+                            <div class="character-preview character-male">
+                                <div class="runner-head"></div>
+                                <div class="runner-body"></div>
+                                <div class="runner-legs">
+                                    <div class="leg left"></div>
+                                    <div class="leg right"></div>
+                                </div>
+                            </div>
+                            <span>Trail Goblin 🧙‍♂️</span>
+                        </button>
+                        <button type="button" class="character-option" data-character="female" aria-label="Valitse Zen Lunatic">
+                            <div class="character-preview character-female">
+                                <div class="runner-head"></div>
+                                <div class="runner-body"></div>
+                                <div class="runner-legs">
+                                    <div class="leg left"></div>
+                                    <div class="leg right"></div>
+                                </div>
+                            </div>
+                            <span>Zen Lunatic 🧘‍♀️</span>
+                        </button>
+                    </div>
+                    <button class="btn btn-primary" id="startGameBtn" disabled>Aloita peli</button>
+                </div>
+                
+                <!-- Game Canvas -->
+                <div class="game-wrapper" id="gameWrapper">
+                    <div class="game-hud">
+                        <div class="hud-item">
+                            <span class="hud-label">Pisteet</span>
+                            <span class="hud-value" id="gameScore">0</span>
+                        </div>
+                        <div class="hud-item">
+                            <span class="hud-label">Nopeus</span>
+                            <span class="hud-value" id="gameSpeed">1x</span>
+                        </div>
+                        <div class="hud-item">
+                            <span class="hud-label">Purkit</span>
+                            <span class="hud-value" id="gameJars">0</span>
+                        </div>
+                    </div>
+                    <canvas id="gameCanvas"></canvas>
+                    <div class="game-instructions">
+                        <span>⬆️ SPACE / CLICK = Hyppää</span>
+                    </div>
+                </div>
+                
+                <!-- Game Over Screen -->
+                <div class="game-over" id="gameOver">
+                    <h3>Game Over!</h3>
+                    <div class="final-stats">
+                        <div class="final-stat">
+                            <span class="stat-label">Pisteet</span>
+                            <span class="stat-value" id="finalScore">0</span>
+                        </div>
+                        <div class="final-stat">
+                            <span class="stat-label">Purkit</span>
+                            <span class="stat-value" id="finalJars">0</span>
+                        </div>
+                        <div class="final-stat">
+                            <span class="stat-label">Max nopeus</span>
+                            <span class="stat-value" id="finalSpeed">1x</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" id="restartGameBtn">Pelaa uudelleen</button>
+                    <button class="btn btn-secondary" id="changeCharacterBtn">Vaihda hahmo</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="guarantee-section">
+        <div class="section-container">
+            <div class="guarantee-card">
+                <div class="guarantee-visual">
+                    <div class="guarantee-shield">
+                        <svg viewBox="0 0 100 120" fill="none">
+                            <path d="M50 5L10 20V55C10 80 30 100 50 115C70 100 90 80 90 55V20L50 5Z" fill="url(#shieldGrad)" stroke="url(#shieldStroke)" stroke-width="2"/>
+                            <path d="M35 55L45 65L65 45" stroke="#0a0a0a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <defs>
+                                <linearGradient id="shieldGrad" x1="10" y1="5" x2="90" y2="115">
+                                    <stop offset="0%" stop-color="#00f5ff"/>
+                                    <stop offset="100%" stop-color="#bf00ff"/>
+                                </linearGradient>
+                                <linearGradient id="shieldStroke" x1="10" y1="5" x2="90" y2="115">
+                                    <stop offset="0%" stop-color="#00f5ff"/>
+                                    <stop offset="100%" stop-color="#bf00ff"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="guarantee-days">30</div>
+                </div>
+                
+                <div class="guarantee-content">
+                    <h2 class="guarantee-title">100% Rahat Takaisin -Takuu</h2>
+                    <p class="guarantee-text">
+                        Olemme niin varmoja Ultra Dustin laadusta, että tarjoamme täyden 30 päivän 
+                        rahat takaisin -takuun. Jos et ole täysin tyytyväinen - mistä tahansa syystä - 
+                        palautamme rahasi. Ei kysymyksiä, ei riitoja.
+                    </p>
+                    <div class="guarantee-features">
+                        <div class="guarantee-feature">
+                            <span>✓</span> Ei riskiä
+                        </div>
+                        <div class="guarantee-feature">
+                            <span>✓</span> Nopea palautus
+                        </div>
+                        <div class="guarantee-feature">
+                            <span>✓</span> Ei kysymyksiä
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="order">
+        <div class="cta-bg">
+            <div class="cta-orb cta-orb-1"></div>
+            <div class="cta-orb cta-orb-2"></div>
+        </div>
+        
+        <div class="section-container">
+            <div class="cta-content">
+                <div class="cta-badge">
+                    <span class="badge-dot"></span>
+                    <span>Rajoitettu erä saatavilla</span>
+                </div>
+                
+                <h2 class="cta-title">
+                    Trust the Guru.<br>
+                    <span class="gradient-text">Embrace the suffering.</span>
+                </h2>
+                
+                <p class="cta-description">
+                    🍇 Hydrate. Hibernate. Hallucinate responsibly.<br>
+                    Juokseminen on halvempaa kuin terapia. Ja yhtä kivuliasta.
+                </p>
+                
+                <div class="product-options">
+                    <div class="product-option">
+                        <div class="option-header">
+                            <span class="option-name">Kertaosto</span>
+                            <span class="option-supply">1 purkki • 30 päivän varasto</span>
+                        </div>
+                        <div class="option-price">
+                            <span class="price-current">€59,90</span>
+                        </div>
+                        <div class="option-perks">
+                            <span>✓ Ilmainen toimitus</span>
+                        </div>
+                        <button class="btn btn-secondary option-btn">Tilaa nyt</button>
+                    </div>
+                    
+                    <div class="product-option product-option-popular">
+                        <div class="popular-badge">Paras arvo</div>
+                        <div class="option-header">
+                            <span class="option-name">Kuukausitilaus</span>
+                            <span class="option-supply">Uusi purkki joka kuukausi</span>
+                        </div>
+                        <div class="option-price">
+                            <span class="price-current">€24,99</span>
+                            <span class="price-period">/kk</span>
+                        </div>
+                        <div class="option-savings">
+                            <span class="savings-tag">Säästä 58%</span>
+                        </div>
+                        <div class="option-perks">
+                            <span>✓ Ilmainen toimitus</span>
+                            <span>✓ Peruuta milloin vain</span>
+                            <span>✓ Ei sitoutumista</span>
+                        </div>
+                        <button class="btn btn-primary option-btn">Aloita tilaus</button>
+                    </div>
+                    
+                    <div class="product-option">
+                        <div class="option-header">
+                            <span class="option-name">3 Purkkia</span>
+                            <span class="option-supply">90 päivän varasto</span>
+                        </div>
+                        <div class="option-price">
+                            <span class="price-original">€179,70</span>
+                            <span class="price-current">€149,90</span>
+                        </div>
+                        <div class="option-savings">
+                            <span class="savings-tag">Säästä €29,80</span>
+                        </div>
+                        <div class="option-perks">
+                            <span>✓ Ilmainen toimitus</span>
+                        </div>
+                        <button class="btn btn-secondary option-btn">Tilaa nyt</button>
+                    </div>
+                </div>
+                
+                <div class="cta-guarantees">
+                    <div class="guarantee">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Ilmainen toimitus</span>
+                    </div>
+                    <div class="guarantee">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>30 päivän takuu</span>
+                    </div>
+                    <div class="guarantee">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Turvallinen maksu</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <a href="#" class="nav-logo">
+                        <svg class="logo-icon" viewBox="0 0 60 40" fill="none">
+                            <path d="M5 35V5L20 20V35H5Z" fill="url(#footerLogoGrad1)"/>
+                            <path d="M25 5H40V20L55 5V35L40 20V35H25V5Z" fill="url(#footerLogoGrad2)"/>
+                            <defs>
+                                <linearGradient id="footerLogoGrad1" x1="5" y1="5" x2="20" y2="35">
+                                    <stop offset="0%" stop-color="#00f5ff"/>
+                                    <stop offset="100%" stop-color="#bf00ff"/>
+                                </linearGradient>
+                                <linearGradient id="footerLogoGrad2" x1="25" y1="5" x2="55" y2="35">
+                                    <stop offset="0%" stop-color="#00f5ff"/>
+                                    <stop offset="100%" stop-color="#bf00ff"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span>ULTRA GURU</span>
+                    </a>
+                    <p class="footer-tagline">Namasté… with bloody feet. #SpiritualButCramping</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Tuotteet</h4>
+                        <a href="#">Ultra Dust</a>
+                        <a href="#">Tulossa pian</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Tietoa</h4>
+                        <a href="#">Tiede</a>
+                        <a href="#">Laatu</a>
+                        <a href="#">Tarina</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Tuki</h4>
+                        <a href="#">UKK</a>
+                        <a href="#">Ota yhteyttä</a>
+                        <a href="#">Toimitusehdot</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Ultra Guru. Kaikki oikeudet pidätetään.</p>
+                <div class="footer-legal">
+                    <a href="#">Tietosuoja</a>
+                    <a href="#">Käyttöehdot</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
