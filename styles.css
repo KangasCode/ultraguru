@@ -3533,29 +3533,9 @@ body:hover .cursor-glow {
         text-align: center;
     }
     
-    /* Urgency Banner Mobile - Compact */
+    /* Urgency Banner - Hidden on mobile */
     .urgency-banner {
-        padding: 8px 12px;
-    }
-    
-    .urgency-content {
-        flex-wrap: nowrap;
-        font-size: 0.7rem;
-        gap: 6px;
-        white-space: nowrap;
-    }
-    
-    .urgency-divider {
         display: none;
-    }
-    
-    .urgency-text {
-        font-size: 0.65rem;
-    }
-    
-    .countdown-timer {
-        font-size: 0.7rem;
-        padding: 4px 8px;
     }
     
     /* Scroll Indicator - Hide on mobile */
@@ -3563,19 +3543,15 @@ body:hover .cursor-glow {
         display: none;
     }
     
-    /* Navigation spacing for smaller banner */
+    /* Navigation - No banner so start at top */
     .nav {
-        top: 32px;
+        top: 0;
         padding: 12px 0;
         background: rgba(10, 10, 10, 0.95);
     }
     
-    .nav.scrolled {
-        top: 0;
-    }
-    
     .hero {
-        padding-top: 120px;
+        padding-top: 80px;
     }
     
     /* Hero image should not overlap with nav */
