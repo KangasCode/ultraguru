@@ -848,6 +848,85 @@ class FAQAccordion {
 }
 
 // ================================================
+// Founder Story - Polaroid Gallery & Story Toggle
+// ================================================
+class FounderStory {
+    constructor() {
+        this.polaroids = document.querySelectorAll('.polaroid');
+        this.dots = document.querySelectorAll('.polaroid-dot');
+        this.storyToggle = document.getElementById('storyToggle');
+        this.storyContainer = document.querySelector('.story-text-container');
+        this.currentIndex = 0;
+        this.autoPlayInterval = null;
+        this.init();
+    }
+
+    init() {
+        if (this.polaroids.length === 0) return;
+
+        // Dot navigation
+        this.dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => this.goToSlide(index));
+        });
+
+        // Click on polaroid to go to next
+        this.polaroids.forEach((polaroid) => {
+            polaroid.addEventListener('click', () => this.nextSlide());
+        });
+
+        // Story toggle
+        if (this.storyToggle && this.storyContainer) {
+            this.storyToggle.addEventListener('click', () => this.toggleStory());
+        }
+
+        // Auto-play polaroids
+        this.startAutoPlay();
+
+        // Pause on hover
+        const gallery = document.querySelector('.polaroid-gallery');
+        if (gallery) {
+            gallery.addEventListener('mouseenter', () => this.stopAutoPlay());
+            gallery.addEventListener('mouseleave', () => this.startAutoPlay());
+        }
+    }
+
+    goToSlide(index) {
+        this.currentIndex = index;
+        
+        // Update polaroids
+        this.polaroids.forEach((p, i) => {
+            p.classList.toggle('active', i === index);
+        });
+
+        // Update dots
+        this.dots.forEach((d, i) => {
+            d.classList.toggle('active', i === index);
+        });
+    }
+
+    nextSlide() {
+        const next = (this.currentIndex + 1) % this.polaroids.length;
+        this.goToSlide(next);
+    }
+
+    startAutoPlay() {
+        this.stopAutoPlay();
+        this.autoPlayInterval = setInterval(() => this.nextSlide(), 4000);
+    }
+
+    stopAutoPlay() {
+        if (this.autoPlayInterval) {
+            clearInterval(this.autoPlayInterval);
+            this.autoPlayInterval = null;
+        }
+    }
+
+    toggleStory() {
+        this.storyContainer.classList.toggle('expanded');
+    }
+}
+
+// ================================================
 // Ingredient Bars Animation
 // ================================================
 class IngredientBars {
@@ -1508,6 +1587,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Sales elements
     new CountdownTimer();
     new FAQAccordion();
+    new FounderStory();
     new IngredientBars();
     new PurityRing();
     
