@@ -236,6 +236,7 @@ class MobileMenu {
     constructor() {
         this.hamburger = document.getElementById('hamburgerBtn');
         this.mobileMenu = document.getElementById('mobileMenu');
+        this.closeBtn = document.getElementById('mobileMenuClose');
         this.menuLinks = document.querySelectorAll('.mobile-menu-link, .mobile-menu-cta');
         this.isOpen = false;
         this.init();
@@ -246,6 +247,11 @@ class MobileMenu {
 
         // Toggle menu on hamburger click
         this.hamburger.addEventListener('click', () => this.toggleMenu());
+
+        // Close button
+        if (this.closeBtn) {
+            this.closeBtn.addEventListener('click', () => this.closeMenu());
+        }
 
         // Close menu when clicking a link
         this.menuLinks.forEach(link => {

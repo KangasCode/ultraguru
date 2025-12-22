@@ -296,19 +296,52 @@ body:hover .cursor-glow {
     align-items: center;
     justify-content: center;
     height: 100%;
-    gap: 24px;
-    padding: 80px 20px 40px;
+    gap: 12px;
+    padding: 100px 20px 40px;
+}
+
+/* Close button for mobile menu */
+.mobile-menu-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.mobile-menu-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+}
+
+.mobile-menu-close svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--white);
+    stroke-width: 2;
 }
 
 .mobile-menu-link {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 600;
     color: var(--white);
     text-decoration: none;
-    padding: 12px 24px;
+    padding: 8px 24px;
     transition: all 0.3s ease;
     opacity: 0;
     transform: translateY(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 80%;
+    text-align: center;
 }
 
 .mobile-menu.active .mobile-menu-link {
@@ -330,11 +363,12 @@ body:hover .cursor-glow {
 }
 
 .mobile-menu-cta {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: var(--black);
     background: var(--gradient-primary);
-    padding: 16px 40px;
+    padding: 14px 50px;
+    margin-top: 16px;
     border-radius: 100px;
     text-decoration: none;
     margin-top: 20px;
