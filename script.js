@@ -230,6 +230,59 @@ class Navigation {
 }
 
 // ================================================
+// Mobile Menu (Hamburger)
+// ================================================
+class MobileMenu {
+    constructor() {
+        this.hamburger = document.getElementById('hamburgerBtn');
+        this.mobileMenu = document.getElementById('mobileMenu');
+        this.menuLinks = document.querySelectorAll('.mobile-menu-link, .mobile-menu-cta');
+        this.isOpen = false;
+        this.init();
+    }
+
+    init() {
+        if (!this.hamburger || !this.mobileMenu) return;
+
+        // Toggle menu on hamburger click
+        this.hamburger.addEventListener('click', () => this.toggleMenu());
+
+        // Close menu when clicking a link
+        this.menuLinks.forEach(link => {
+            link.addEventListener('click', () => this.closeMenu());
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.isOpen) {
+                this.closeMenu();
+            }
+        });
+
+        // Close menu when clicking outside
+        this.mobileMenu.addEventListener('click', (e) => {
+            if (e.target === this.mobileMenu) {
+                this.closeMenu();
+            }
+        });
+    }
+
+    toggleMenu() {
+        this.isOpen = !this.isOpen;
+        this.hamburger.classList.toggle('active');
+        this.mobileMenu.classList.toggle('active');
+        document.body.style.overflow = this.isOpen ? 'hidden' : '';
+    }
+
+    closeMenu() {
+        this.isOpen = false;
+        this.hamburger.classList.remove('active');
+        this.mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+// ================================================
 // Scroll Animations (AOS-like) - Performance Optimized
 // ================================================
 class ScrollAnimations {
@@ -1433,6 +1486,7 @@ document.addEventListener('DOMContentLoaded', () => {
     new CursorGlow();
     new ParticleBackground();
     new Navigation();
+    new MobileMenu();
     new ScrollAnimations();
     new SmoothScroll();
     new ScrollProgress();
