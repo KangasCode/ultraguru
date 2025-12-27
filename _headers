@@ -1,0 +1,38 @@
+# Cache Control Headers for Render.com
+
+# HTML - No caching for immediate updates
+/*.html
+  Cache-Control: no-cache, no-store, must-revalidate
+  Pragma: no-cache
+  Expires: 0
+
+# Root index
+/
+  Cache-Control: no-cache, no-store, must-revalidate
+  Pragma: no-cache
+  Expires: 0
+
+# CSS and JS - Short cache (5 minutes)
+/*.css
+  Cache-Control: public, max-age=300
+  
+/*.js
+  Cache-Control: public, max-age=300
+
+# Images - Moderate cache (1 hour)
+/*.jpg
+  Cache-Control: public, max-age=3600
+  
+/*.jpeg
+  Cache-Control: public, max-age=3600
+  
+/*.png
+  Cache-Control: public, max-age=3600
+  
+/*.webp
+  Cache-Control: public, max-age=3600
+
+# Videos - Longer cache (1 day)
+/*.mp4
+  Cache-Control: public, max-age=86400
+
