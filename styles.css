@@ -387,8 +387,8 @@ body:hover .cursor-glow {
     transform: scale(1.05);
 }
 
-/* Show hamburger on mobile */
-@media (max-width: 992px) {
+/* Show hamburger on mobile and tablets */
+@media (max-width: 1200px) {
     .hamburger {
         display: flex;
     }
@@ -2382,7 +2382,7 @@ body:hover .cursor-glow {
 }
 
 /* Founder Section Responsive */
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
     .founder-content {
         grid-template-columns: 1fr;
         gap: 50px;
@@ -3902,7 +3902,7 @@ body:hover .cursor-glow {
     }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
     .nav-links {
         display: none;
     }
