@@ -1561,6 +1561,205 @@ class LazyVideos {
 }
 
 // ================================================
+// Scroll-Triggered Product Rotation
+// ================================================
+class ScrollProductRotation {
+    constructor() {
+        this.productImage = document.getElementById('scrollProductImage');
+        this.wrapper = document.getElementById('scrollProductWrapper');
+        this.scrollHint = document.querySelector('.scroll-hint');
+        
+        if (!this.productImage || !this.wrapper) return;
+        
+        this.init();
+    }
+    
+    init() {
+        // Set initial state
+        this.lastScrollY = window.scrollY;
+        this.rotation = 0;
+        
+        // Use Intersection Observer to track when section is visible
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    window.addEventListener('scroll', this.handleScroll);
+                    // Hide scroll hint once user starts scrolling
+                    if (this.scrollHint) {
+                        setTimeout(() => {
+                            this.scrollHint.style.opacity = '0';
+                            this.scrollHint.style.transition = 'opacity 0.5s ease';
+                        }, 3000);
+                    }
+                } else {
+                    window.removeEventListener('scroll', this.handleScroll);
+                }
+            });
+        }, {
+            threshold: 0.3
+        });
+        
+        observer.observe(this.wrapper);
+    }
+    
+    handleScroll = () => {
+        // Calculate scroll difference
+        const currentScrollY = window.scrollY;
+        const scrollDelta = currentScrollY - this.lastScrollY;
+        
+        // Update rotation based on scroll (adjust multiplier for speed)
+        this.rotation += scrollDelta * 0.3;
+        
+        // Apply rotation like a clock (Z-axis) with subtle scale
+        const scale = 1 + Math.sin(this.rotation * 0.01) * 0.03; // Subtle pulsing
+        this.productImage.style.transform = `
+            rotate(${this.rotation}deg) 
+            scale(${scale})
+        `;
+        
+        // Add glow intensity based on rotation speed
+        const intensity = Math.min(Math.abs(scrollDelta) * 0.05, 1);
+        this.productImage.style.filter = `
+            drop-shadow(0 20px 60px rgba(0, 245, 255, ${0.3 + intensity * 0.3}))
+            brightness(${1 + intensity * 0.2})
+        `;
+        
+        this.lastScrollY = currentScrollY;
+    }
+}
+
+// ================================================
+// Anime.js Scroll Animations
+// ================================================
+class AnimeScrollAnimations {
+    constructor() {
+        this.section = document.querySelector('.anime-scroll-section');
+        if (!this.section) return;
+        
+        this.animationTriggered = false;
+        this.init();
+    }
+    
+    init() {
+        // Create Intersection Observer for triggering animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !this.animationTriggered) {
+                    this.animationTriggered = true;
+                    this.triggerAnimations();
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+        
+        observer.observe(this.section);
+    }
+    
+    triggerAnimations() {
+        // Check if anime is loaded
+        if (typeof anime === 'undefined') {
+            console.warn('Anime.js not loaded');
+            return;
+        }
+        
+        // Animate header
+        anime({
+            targets: '.anime-header',
+            opacity: [0, 1],
+            translateY: [-50, 0],
+            duration: 1000,
+            easing: 'easeOutExpo'
+        });
+        
+        anime({
+            targets: '.anime-tag',
+            opacity: [0, 1],
+            scale: [0.8, 1],
+            duration: 800,
+            delay: 200,
+            easing: 'easeOutElastic(1, .6)'
+        });
+        
+        anime({
+            targets: '.anime-title',
+            opacity: [0, 1],
+            translateY: [30, 0],
+            duration: 1000,
+            delay: 400,
+            easing: 'easeOutExpo'
+        });
+        
+        // Animate cards with stagger
+        anime({
+            targets: '.anime-card',
+            opacity: [0, 1],
+            translateY: [60, 0],
+            scale: [0.9, 1],
+            duration: 1200,
+            delay: anime.stagger(150, {start: 600}),
+            easing: 'easeOutExpo',
+            complete: () => {
+                // Trigger progress bars after cards animate
+                this.animateProgressBars();
+            }
+        });
+        
+        // Animate stats with counter
+        anime({
+            targets: '.anime-stat',
+            opacity: [0, 1],
+            scale: [0.8, 1],
+            duration: 1000,
+            delay: anime.stagger(200, {start: 1800}),
+            easing: 'easeOutElastic(1, .6)',
+            complete: () => {
+                this.animateCounters();
+            }
+        });
+        
+        // Pulse animation for icons
+        anime({
+            targets: '.anime-icon',
+            scale: [1, 1.1, 1],
+            rotate: [0, 5, -5, 0],
+            duration: 3000,
+            delay: anime.stagger(300, {start: 2000}),
+            loop: true,
+            easing: 'easeInOutSine'
+        });
+    }
+    
+    animateProgressBars() {
+        // Animate each progress bar to full width
+        const progressBars = document.querySelectorAll('.anime-progress-bar');
+        progressBars.forEach((bar, index) => {
+            setTimeout(() => {
+                bar.style.width = '100%';
+            }, index * 150);
+        });
+    }
+    
+    animateCounters() {
+        const stats = document.querySelectorAll('.anime-stat');
+        
+        stats.forEach((stat, index) => {
+            const numberEl = stat.querySelector('.anime-stat-number');
+            const target = parseInt(numberEl.getAttribute('data-target'));
+            
+            anime({
+                targets: numberEl,
+                innerHTML: [0, target],
+                duration: 2000,
+                delay: index * 200,
+                round: 1,
+                easing: 'easeOutExpo'
+            });
+        });
+    }
+}
+
+// ================================================
 // Initialize Everything
 // ================================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -1599,6 +1798,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Mini game
     new UltraGuruRunnerGame();
+    
+    // Scroll product rotation
+    new ScrollProductRotation();
+    
+    // Anime.js scroll animations
+    new AnimeScrollAnimations();
     
     console.log('✨ Ultra Guru Landing Page Initialized');
 });

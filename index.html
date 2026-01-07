@@ -218,11 +218,6 @@
                     <div class="product-ring product-ring-2"></div>
                     <div class="product-ring product-ring-3"></div>
                     <div class="product-container">
-                        <!-- Edge glow effects -->
-                        <div class="edge-glow-left"></div>
-                        <div class="edge-glow-right"></div>
-                        <div class="edge-glow-top"></div>
-                        
                         <img src="images/premiummagnesium.webp" alt="Ultra Dust - Advanced Magnesium Complex" class="product-image" id="productImage" loading="eager" fetchpriority="high" onerror="this.style.display='none'; document.getElementById('productFallback').style.display='flex';">
                         
                         <!-- Fallback when image doesn't load -->
@@ -587,6 +582,178 @@
                 <span class="running-badge">🏃 BORN TO RUN</span>
                 <h2 class="running-title">When your legs scream stop,<br>your mind whispers <span class="gradient-text-light">keep going.</span></h2>
                 <p class="running-subtitle">Ultra Guru - Fuel for the fearless.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll-Triggered Product Rotation Section -->
+    <section class="scroll-rotation-section" id="scroll-product">
+        <div class="section-container">
+            <div class="rotation-content">
+                <div class="rotation-text-col" data-aos="fade-right">
+                    <span class="section-tag">#ShutUpLegsNamaste</span>
+                    <h2 class="section-title">
+                        120 kapselia.<br>
+                        <span class="gradient-text">Valmistettu Tuusulassa.</span>
+                    </h2>
+                    <p class="rotation-description">
+                        💜 Ei mikään halpamuovipurkki kiinalaiselta tehtaalta. 
+                        Miron violettilasi suojaa magnesiumia kuin eliitin vartiomies. 
+                        Ja sisältö? Tehty Tuusulassa, missä sisu on standardi ja kompromissit kirosanoja.
+                    </p>
+                    
+                    <div class="rotation-features">
+                        <div class="rotation-feature">
+                            <div class="feature-number">120</div>
+                            <div class="feature-label">Kapselia/purkki</div>
+                        </div>
+                        <div class="rotation-feature">
+                            <div class="feature-number">30pv</div>
+                            <div class="feature-label">Varasto</div>
+                        </div>
+                        <div class="rotation-feature">
+                            <div class="feature-number">🇫🇮</div>
+                            <div class="feature-label">Tuusulasta</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="rotation-product-col">
+                    <div class="scroll-product-wrapper" id="scrollProductWrapper">
+                        <div class="product-glow-ring"></div>
+                        <div class="product-glow-ring ring-2"></div>
+                        <img 
+                            src="images/premiummagnesium.webp" 
+                            alt="Ultra Dust 3D Rotation" 
+                            class="scroll-product-image" 
+                            id="scrollProductImage"
+                            loading="lazy"
+                        >
+                        <div class="scroll-hint">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 5v14M19 12l-7 7-7-7"/>
+                            </svg>
+                            <span>Scroll down</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Anime.js Scroll Animation Section -->
+    <section class="anime-scroll-section" id="anime-section">
+        <div class="section-container">
+            <div class="anime-header">
+                <span class="section-tag anime-tag">#ActivateGuruMode</span>
+                <h2 class="section-title anime-title">
+                    <span class="gradient-text anime-gradient">Neljä muotoa. Yksi teho.</span>
+                </h2>
+            </div>
+            
+            <div class="anime-grid">
+                <div class="anime-card anime-card-1">
+                    <div class="anime-icon-wrapper">
+                        <div class="anime-circle"></div>
+                        <svg class="anime-icon" viewBox="0 0 64 64" fill="none">
+                            <path d="M32 8L36 24L52 20L40 32L52 44L36 40L32 56L28 40L12 44L24 32L12 20L28 24L32 8Z" stroke="url(#animeGrad1)" stroke-width="2" fill="url(#animeGrad1)" fill-opacity="0.2"/>
+                            <defs>
+                                <linearGradient id="animeGrad1" x1="12" y1="8" x2="52" y2="56">
+                                    <stop offset="0%" stop-color="#00ff88"/>
+                                    <stop offset="100%" stop-color="#00f5ff"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h3 class="anime-card-title">Energia</h3>
+                    <p class="anime-card-desc">Magnesium aktivoi 300+ entsyymiä kehossasi</p>
+                    <div class="anime-progress">
+                        <div class="anime-progress-bar anime-progress-1"></div>
+                    </div>
+                </div>
+                
+                <div class="anime-card anime-card-2">
+                    <div class="anime-icon-wrapper">
+                        <div class="anime-circle"></div>
+                        <svg class="anime-icon" viewBox="0 0 64 64" fill="none">
+                            <circle cx="32" cy="32" r="20" stroke="url(#animeGrad2)" stroke-width="2"/>
+                            <circle cx="32" cy="32" r="12" stroke="url(#animeGrad2)" stroke-width="2"/>
+                            <circle cx="32" cy="32" r="4" fill="url(#animeGrad2)"/>
+                            <path d="M32 8V16M32 48V56M8 32H16M48 32H56" stroke="url(#animeGrad2)" stroke-width="2" stroke-linecap="round"/>
+                            <defs>
+                                <linearGradient id="animeGrad2" x1="8" y1="8" x2="56" y2="56">
+                                    <stop offset="0%" stop-color="#bf00ff"/>
+                                    <stop offset="100%" stop-color="#ff006e"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h3 class="anime-card-title">Fokus</h3>
+                    <p class="anime-card-desc">L-Threonaatti tukee aivojen toimintaa</p>
+                    <div class="anime-progress">
+                        <div class="anime-progress-bar anime-progress-2"></div>
+                    </div>
+                </div>
+                
+                <div class="anime-card anime-card-3">
+                    <div class="anime-icon-wrapper">
+                        <div class="anime-circle"></div>
+                        <svg class="anime-icon" viewBox="0 0 64 64" fill="none">
+                            <circle cx="32" cy="32" r="28" stroke="url(#animeGrad3)" stroke-width="2"/>
+                            <path d="M32 16C32 16 20 24 20 36C20 42.627 25.373 48 32 48C38.627 48 44 42.627 44 36C44 24 32 16 32 16Z" fill="url(#animeGrad3)"/>
+                            <path d="M28 28L32 24L36 28" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="28" cy="36" r="2" fill="#0a0a0a"/>
+                            <circle cx="36" cy="36" r="2" fill="#0a0a0a"/>
+                            <defs>
+                                <linearGradient id="animeGrad3" x1="0" y1="0" x2="64" y2="64">
+                                    <stop offset="0%" stop-color="#00f5ff"/>
+                                    <stop offset="100%" stop-color="#bf00ff"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h3 class="anime-card-title">Uni</h3>
+                    <p class="anime-card-desc">Glysinaatti rauhoittaa hermostoa</p>
+                    <div class="anime-progress">
+                        <div class="anime-progress-bar anime-progress-3"></div>
+                    </div>
+                </div>
+                
+                <div class="anime-card anime-card-4">
+                    <div class="anime-icon-wrapper">
+                        <div class="anime-circle"></div>
+                        <svg class="anime-icon" viewBox="0 0 64 64" fill="none">
+                            <path d="M32 12C32 12 18 20 18 32C18 40 24 48 32 52C40 48 46 40 46 32C46 20 32 12 32 12Z" stroke="url(#animeGrad4)" stroke-width="2" fill="url(#animeGrad4)" fill-opacity="0.2"/>
+                            <path d="M26 32L30 36L38 28" stroke="url(#animeGrad4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <defs>
+                                <linearGradient id="animeGrad4" x1="8" y1="8" x2="56" y2="56">
+                                    <stop offset="0%" stop-color="#ff006e"/>
+                                    <stop offset="100%" stop-color="#ffbe0b"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h3 class="anime-card-title">Palautuminen</h3>
+                    <p class="anime-card-desc">Malaatti tukee lihasten toipumista</p>
+                    <div class="anime-progress">
+                        <div class="anime-progress-bar anime-progress-4"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="anime-stats-row">
+                <div class="anime-stat anime-stat-1">
+                    <div class="anime-stat-number" data-target="594">0</div>
+                    <div class="anime-stat-label">mg per annos</div>
+                </div>
+                <div class="anime-stat anime-stat-2">
+                    <div class="anime-stat-number" data-target="300">0</div>
+                    <div class="anime-stat-label">entsyymiä aktivoituu</div>
+                </div>
+                <div class="anime-stat anime-stat-3">
+                    <div class="anime-stat-number" data-target="90">0</div>
+                    <div class="anime-stat-label">% imeytyminen</div>
+                </div>
             </div>
         </div>
     </section>
@@ -1845,6 +2012,9 @@
         </div>
     </footer>
 
+    <!-- Anime.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    
     <script src="script.js?v=1.0.2" defer></script>
 </body>
 </html>
